@@ -11,9 +11,9 @@ labtainer_config = ParseLabtainerConfig.ParseLabtainerConfig(config_file, None)
 lgr = LabtainerLogging.LabtainerLogging("/tmp/move_base.log", 'none', config_file)
 base_names = LabtainerBase.getBaseList(skip_exempt=False)
 
-old_reg = 'mfthomps'
+old_reg = 'oabuoun'
 new_reg = 'labtainers'
-os.system('docker login -u mfthomps')
+os.system('docker login -u oabuoun')
 for base in base_names:
     old = '%s/%s' % (old_reg, base)
     new = '%s/%s' % (new_reg, base)

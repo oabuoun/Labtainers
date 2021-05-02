@@ -68,7 +68,7 @@ else
         cp $LABTAINER_DIR/headless-lite/docker-compose.yml .
     elif [[ "$LABTAINER_TEST" == "TRUE" ]];then
         echo "Using labtainer.headless.tester"
-        curl https://raw.githubusercontent.com/mfthomps/Labtainers/master/headless-lite/docker-compose.yml > docker-compose.yml 
+        curl https://raw.githubusercontent.com/oabuoun/Labtainers/master/headless-lite/docker-compose.yml > docker-compose.yml 
         sed -i s%labtainers/labtainer.master.headless%testregistry:5000/labtainer.headless.tester% docker-compose.yml
         sed -i s%accetto/ubuntu-vnc-xfce%testregistry:5000/ubuntu-vnc-xfce% docker-compose.yml
         echo "frank@beans.com" > /home/labtainer/headless-labtainers/labtainers/email.txt
@@ -79,7 +79,7 @@ else
         #
         sudo chown root:docker /var/run/docker.sock
     else
-        curl https://raw.githubusercontent.com/mfthomps/Labtainers/master/headless-lite/docker-compose.yml > docker-compose.yml 
+        curl https://raw.githubusercontent.com/oabuoun/Labtainers/master/headless-lite/docker-compose.yml > docker-compose.yml 
     fi
     fix_it
     do_up

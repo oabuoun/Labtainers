@@ -27,7 +27,7 @@ usermod -aG sudo labtainer
 
 mkdir -p /home/labtainer/headless-labtainers
 chown labtainer:labtainer /home/labtainer/headless-labtainers
-wget -P /home/labtainer/headless-labtainers https://raw.githubusercontent.com/mfthomps/Labtainers/premaster/headless-lite/headless-labtainers.sh
+wget -P /home/labtainer/headless-labtainers https://raw.githubusercontent.com/oabuoun/Labtainers/premaster/headless-lite/headless-labtainers.sh
 chmod a+x /home/labtainer/headless-labtainers/headless-labtainers.sh
 tee -a /lib/systemd/system/headless-labtainers.service > /dev/null <<EOT
    [Unit]
@@ -49,8 +49,8 @@ if [[ -z "$TEST_FLAG" ]]; then
     docker pull labtainers/labtainer.master.headless
     docker pull accetto/ubuntu-vnc-xfce
 else
-    wget -P /home/labtainer/headless-labtainers https://raw.githubusercontent.com/mfthomps/Labtainers/premaster/setup_scripts/prep-testregistry.sh
-    wget -P /home/labtainer/headless-labtainers https://raw.githubusercontent.com/mfthomps/Labtainers/premaster/setup_scripts/testreg-add.py
+    wget -P /home/labtainer/headless-labtainers https://raw.githubusercontent.com/oabuoun/Labtainers/premaster/setup_scripts/prep-testregistry.sh
+    wget -P /home/labtainer/headless-labtainers https://raw.githubusercontent.com/oabuoun/Labtainers/premaster/setup_scripts/testreg-add.py
     cd /home/labtainer/headless-labtainers
     chmod a+x prep-testregistry.sh testreg-add.py
     ./prep-testregistry.sh

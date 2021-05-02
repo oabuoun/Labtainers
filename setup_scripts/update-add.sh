@@ -9,7 +9,7 @@ hascommit=$(grep "^Commit:" labtainer/trunk/README.md)
 hasgit=$(grep "github.*releases" labtainer/update-labtainer.sh)
 if [ -z "$hascommit" ] || [ -z "$hasgit" ]; then
     cd labtainer
-    wget --quiet https://github.com/mfthomps/Labtainers/releases/latest/download/labtainer.tar -O labtainer.tar
+    wget --quiet https://github.com/oabuoun/Labtainers/releases/latest/download/labtainer.tar -O labtainer.tar
     sync
     cd ..
     tar xf labtainer/labtainer.tar --keep-newer-files --warning=none

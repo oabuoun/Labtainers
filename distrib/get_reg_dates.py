@@ -12,7 +12,7 @@ import ParseLabtainerConfig
 import InspectRemoteReg
 
 def getDates(image, reg, lab, logger):
-        if reg == 'mfthomps':
+        if reg == 'oabuoun':
             with_reg = '%s/%s' % (reg, image)
             created, user, version, tag = InspectRemoteReg.inspectRemote(with_reg, logger, no_pull=True)
         else:

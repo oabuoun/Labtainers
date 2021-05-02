@@ -81,8 +81,8 @@ ln -sf $full trunk/scripts/labtainer-student/bin/update-designer.sh
 if [[ "$TEST_REGISTRY" != TRUE ]]; then
     #wget https://my.nps.edu/documents/107523844/109121513/labtainer-developer.tar/f377285e-23b5-4cd4-a578-c879b0200fff -O labtainer-developer.tar
     #wget --quiet https://nps.box.com/shared/static/xk9e07r7m5szrc9owggawyxzy5w3rzrh.tar -O labtainer-developer.tar
-    #wget --quiet https://github.com/mfthomps/Labtainers/raw/master/distrib/release/labtainer-developer.tar -O labtainer-developer.tar
-    wget --quiet https://github.com/mfthomps/Labtainers/tarball/master -O labtainer-master.tar
+    #wget --quiet https://github.com/oabuoun/Labtainers/raw/master/distrib/release/labtainer-developer.tar -O labtainer-developer.tar
+    wget --quiet https://github.com/oabuoun/Labtainers/tarball/master -O labtainer-master.tar
     sync
 else
     cp /media/sf_SEED/test_vms/$HOSTNAME/labtainer-master.tar .
@@ -108,7 +108,7 @@ rm -f labtainer/trunk/scripts/labtainer-student/bin/SimLab*
 
 tar xf labtainer/labtainer-master.tar --strip 1 -C $LABTAINER_DIR
 if [[ "$TEST_REGISTRY" != TRUE ]]; then
-    wget --quiet https://github.com/mfthomps/Labtainers/releases/latest/download/MainUI.jar -O $LABTAINER_DIR/UI/bin/MainUI.jar
+    wget --quiet https://github.com/oabuoun/Labtainers/releases/latest/download/MainUI.jar -O $LABTAINER_DIR/UI/bin/MainUI.jar
 fi
 grep "^Distribution created:" labtainer/trunk/README.md | awk '{print "Updated to release of: ", $3, $4}'
 

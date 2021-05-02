@@ -36,7 +36,7 @@ import InspectLocalReg
 import InspectRemoteReg
 import LabtainerLogging
 '''
-Move repos from the mfthomps registry to the labtainers registry
+Move repos from the oabuoun registry to the labtainers registry
 '''
 
 def do_lab(lab_dir, lab, role, source_reg, dest_reg, force, logger):
@@ -71,7 +71,7 @@ def do_lab(lab_dir, lab, role, source_reg, dest_reg, force, logger):
         else:
             print('local registry for %s is up to date.' % image)
 
-parser = argparse.ArgumentParser(description='pull from the docker hub mfthomps and push to docker hub labtainers')
+parser = argparse.ArgumentParser(description='pull from the docker hub oabuoun and push to docker hub labtainers')
 parser.add_argument('-l', '--lab', action='store', help='only pull/tag/push this lab')
 parser.add_argument('-f', '--force', action='store_true', default=False, help='force pull/push')
 args = parser.parse_args()
@@ -89,9 +89,9 @@ lab_list = os.listdir(labdir)
 # test with a single lab.  Then use loop below once it works.
 #
 new_registry = 'labtainers'
-os.system('docker login -u mfthomps')
+os.system('docker login -u oabuoun')
 if args.lab is not None:
-    do_lab(labdir, args.lab, 'student', 'mfthomps', new_registry, args.force, logger)
+    do_lab(labdir, args.lab, 'student', 'oabuoun', new_registry, args.force, logger)
 else:
     #print('commented out for now')
     for lab in sorted(lab_list):
@@ -100,4 +100,4 @@ else:
             cmd = 'git ls-files --error-unmatch %s > /dev/null 2>&1' % start_config
             result = os.system(cmd)
             if result == 0:
-                do_lab(labdir, lab, 'student', 'mfthomps', new_registry, args.force, logger)
+                do_lab(labdir, lab, 'student', 'oabuoun', new_registry, args.force, logger)

@@ -463,7 +463,7 @@ def find_template(here, tdir, basename):
         open_dfile = open(base_dfile)
         line = open_dfile.readline()
         while line:
-            if line.startswith('FROM $registry/labtainer.') or line.startswith('FROM mfthomps/labtainer.'):
+            if line.startswith('FROM $registry/labtainer.') or line.startswith('FROM oabuoun/labtainer.'):
                 not_base0 = True
                 break
             line = open_dfile.readline()
@@ -485,7 +485,7 @@ def find_template(here, tdir, basename):
             open_dfile = open(base_dfile)
             line = open_dfile.readline()
             while line:
-                if line.startswith('FROM $registry/labtainer.') or line.startswith('FROM mfthomps/labtainer.'):
+                if line.startswith('FROM $registry/labtainer.') or line.startswith('FROM oabuoun/labtainer.'):
                     referenced_base = "Dockerfile.labtainer.%s" % line.split('labtainer.')[1].rstrip()
                     #print("Ref Base: " + referenced_base)
 

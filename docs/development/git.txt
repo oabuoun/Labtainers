@@ -1,6 +1,6 @@
 DO NOT git svn fetch
 git svn rebase
-###  IF NEEDED ? git pull https://github.com/mfthomps/Labtainers
+###  IF NEEDED ? git pull https://github.com/oabuoun/Labtainers
 git push origin master
 
 
@@ -20,7 +20,7 @@ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 change to https:
 git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
 
-git remote set-url origin https://github.com/mfthomps/Labtainers.git
+git remote set-url origin https://github.com/oabuoun/Labtainers.git
 git remote set-url --push origin git@github.com:mfthomps/Labtainers.git
 
 

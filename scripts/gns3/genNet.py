@@ -31,7 +31,7 @@ def getLabtainerNodeId(gns3_json, name):
         if ni.startswith(name):
             print('matched node id %s' % node['node_id'])
             return node['node_id']
-        if ni.startswith('mfthomps-'+name):
+        if ni.startswith('oabuoun-'+name):
             print('matched node id %s' % node['node_id'])
             return node['node_id']
     return None

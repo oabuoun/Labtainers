@@ -1,11 +1,11 @@
 # Headless Labtainers
 Run Labtainers on systems that lack X11 desktops.  This assumes you have installed Docker, e.g., Docker Desktop on a Mac or
-Windows machine. Cloud-based solutions are also supported using remote servers.  Headless Labtainers are an alternative to 
+Windows machine. Cloud-based solutions are also supported using remote servers.  Headless Labtainers are an alternative to
 the Labtainer VM Appliance.
 
-# Quick Start 
-Execute the ./headless-labtainers.sh script.  Or download from 
-   https://raw.githubusercontent.com/mfthomps/Labtainers/master/headless-lite/headless-labtainers.sh 
+# Quick Start
+Execute the ./headless-labtainers.sh script.  Or download from
+   https://raw.githubusercontent.com/oabuoun/Labtainers/master/headless-lite/headless-labtainers.sh
 and make executable and then run.
 On a Mac, this would be done from a terminal.  On Windows, use Powershell.
 
@@ -17,7 +17,7 @@ Open a browser and goto http://localhost:6901/vnc.html?password= (uses blank def
 In addition to starting the Headless Labtainers, the script will create a ~/headless-labtainers directory.  A student would then run
 headless-labtainers.sh from that directory in the future.  That directory will also contain persistent data.
 
-**Warning**: if you run docker-compose directly prior to running headless-labtainers.sh, you may end up with broken file 
+**Warning**: if you run docker-compose directly prior to running headless-labtainers.sh, you may end up with broken file
 permissions (though running it directly after first running headless-labtainers.sh should work fine).
 
 # Security considerations
@@ -40,7 +40,7 @@ You can test the cloud-config using Canonical's Multipass.
 >    multipass launch -m 2G -c 2 -d 40G --name labtainer1 --cloud-init cloud-config
 
 Then open an SSH tunnel to the resulting IP address:
->  ssh -AfN -L 6901:127.0.0.1:6901 -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -o "ServerAliveInterval 60" labtainer@my\_vm\_ip 
+>  ssh -AfN -L 6901:127.0.0.1:6901 -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -o "ServerAliveInterval 60" labtainer@my\_vm\_ip
 
 Then access Labtainers from a browser pointed to http://localhost:6901
 
@@ -49,7 +49,7 @@ of a server or cloud deployment is provided below.  In this example, each studen
 steps below are also captured in the cloud-config file.
 
 * Provision one VM per student with an SSH Server, Docker and Docker Compose installed. (**Warning** Use of snap.docker is not supported,
-use the Docker distributed by Docker. Do not select the "Docker" from Ubuntu's system install menus.) 
+use the Docker distributed by Docker. Do not select the "Docker" from Ubuntu's system install menus.)
 * Add a "labtainer" user to the VM.
 * Add the headless-labtainers.sh script to the VM, run it, and configure it to run as a service from ~/labtainers-student as user labtainer.
 * Allocate at least 2GB and 2 cores to each VM.
@@ -107,7 +107,7 @@ Automated updates routinely break installation software by holding locks.
 * sudo mount /dev/cdrom /media/cdrom
 * cd /media/cdrom
 * sudo apt-get install -y dkms build-essential linux-headers-generic linux-headers-$(uname -r)
-* sudo su 
+* sudo su
 * ./VBoxLinuxAdditions.run
 * sudo usermod -G vboxsf -a $USER
 
@@ -125,11 +125,11 @@ Here are the instructions to create a new labtainer.master file.
 Prereqs: linux system with git and docker installed.  Note: Labtainer VM is a good place to do this.
 
 1. Make directory to house files from Git Repo and change dir to that directory. `mkdir foo && cd foo`
-2. Pull down files from Git repository. `git clone  https://github.com/mfthomps/Labtainers.git`
+2. Pull down files from Git repository. `git clone  https://github.com/oabuoun/Labtainers.git`
 3. Move to that directory.  `cd Labtainers`
 4. Change to the premaster branch `git checkout premaster`
 5. Set $LABTAINER_DIR to root of Git Repo Files. ``export LABTAINER_DIR=`pwd` ``
-6. Cd to correct directory to update labtainer.tar. `cd distrib`. 
+6. Cd to correct directory to update labtainer.tar. `cd distrib`.
 7. Ensure you have latex installed, to build the pdfs for labs. `sudo apt install texlive-full`.  
 8. Update the labtainer.tar file `./mkdist.sh`.  Ignore errors.  
 9. Cd to correct directory to build image. `cd ../scripts/designer/bin`
@@ -144,5 +144,3 @@ b. Tag the container created in previous steps (create_headline_master.sh) to ma
 c. Push that image to dockerhub. `docker push [your docker username]/labtainer.master`.  
 d. Edit the docker-compose.yml file to rename that repo/container above.  
 e. Test new docker-compose.yml file. `docker-compose up`.  This command should pull down that image from hub.docker.com.
-
-

@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! -d Labtainers ]]; then
-    git clone https://github.com/mfthomps/Labtainers.git
+    git clone https://github.com/oabuoun/Labtainers.git
     cd Labtainers
 else
     cd Labtainers

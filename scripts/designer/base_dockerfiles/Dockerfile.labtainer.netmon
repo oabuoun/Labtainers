@@ -1,4 +1,4 @@
-FROM mfthomps/labtainer.wireshark
+FROM oabuoun/labtainer.wireshark
 LABEL description="This is base Docker image for the Labtainer server that receives tcpdumps from a tap component."
 ADD system/bin/labdump_server.py /bin/
 ADD system/lib/systemd/system/labdump.service /lib/systemd/system/

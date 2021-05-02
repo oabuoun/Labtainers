@@ -85,7 +85,7 @@ def main():
     # test with a single lab.  Then use loop below once it works.
     #
     args = parser.parse_args()
-    registry = 'mfthomps'
+    registry = 'oabuoun'
     if args.test_registry:
         registry = 'testregistry:5000'
     if args.lab is not None:

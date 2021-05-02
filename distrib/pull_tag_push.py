@@ -90,10 +90,10 @@ lab_list = os.listdir(labdir)
 #
 testregistry = 'testregistry:5000'
 if args.lab is not None:
-    do_lab(labdir, args.lab, 'student', 'mfthomps', testregistry, args.force, logger)
+    do_lab(labdir, args.lab, 'student', 'oabuoun', testregistry, args.force, logger)
 else:
     #print('commented out for now')
     testregistry = 'testregistry:5000'
     for lab in sorted(lab_list):
         if lab not in skip:
-            do_lab(labdir, lab, 'student', 'mfthomps', testregistry, args.force, logger)
+            do_lab(labdir, lab, 'student', 'oabuoun', testregistry, args.force, logger)

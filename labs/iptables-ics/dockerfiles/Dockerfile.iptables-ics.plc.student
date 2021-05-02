@@ -30,7 +30,7 @@ ENV HOME /home/$user_name
 ADD $labdir/$lab.tar.gz $HOME
 
 WORKDIR /home/$user_name
-RUN git clone https://github.com/mfthomps/OpenPLC_v3.git
+RUN git clone https://github.com/oabuoun/OpenPLC_v3.git
 WORKDIR /home/$user_name/OpenPLC_v3
 RUN sudo ./install.sh linux
 RUN cp /var/tmp/openplc.db $HOME/OpenPLC_v3/webserver/

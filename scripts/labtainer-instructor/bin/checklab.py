@@ -76,7 +76,7 @@ def check_cmdinit(filename):
 
 def check_dockerfile_base(filename, basestring):
     base_found = False
-    sourcebasestring = "mfthomps/%s" % basestring
+    sourcebasestring = "oabuoun/%s" % basestring
     with open(filename, "r") as fh:
         filelines = fh.readlines()
     for line in filelines:
